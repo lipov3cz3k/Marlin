@@ -46,12 +46,12 @@
 //
 // Trinamic Stallguard pins
 //
-#define X_DIAG_PIN                          PB10  // X-
-#define Y_DIAG_PIN                          PE12  // Y-
+#define X_DIAG_PIN                          PG5   // X- (originally E2)
+#define Y_DIAG_PIN                          PE10  // Y- (originally E1)
 #define Z_DIAG_PIN                          PG8   // Z-
 #define E0_DIAG_PIN                         PE15  // E0
-#define E1_DIAG_PIN                         PE10  // E1
-#define E2_DIAG_PIN                         PG5   // E2
+#define E1_DIAG_PIN                         PE12  // E1
+#define E2_DIAG_PIN                         PB10  // E2
 
 //
 // Limit Switches
@@ -115,46 +115,48 @@
 //
 // Steppers
 //
-#define X_STEP_PIN                          PE9
-#define X_DIR_PIN                           PF1
-#define X_ENABLE_PIN                        PF2
+//swapped X and E2 (X is not working)
+#define X_STEP_PIN         PD13
+#define X_DIR_PIN          PG9
+#define X_ENABLE_PIN       PF0
 #ifndef X_CS_PIN
-  #define X_CS_PIN                          PA15
+  #define X_CS_PIN         PG12
 #endif
 
-#define Y_STEP_PIN                          PE11
-#define Y_DIR_PIN                           PE8
-#define Y_ENABLE_PIN                        PD7
+//swapped Y and E1 (just to be neat)
+#define Y_STEP_PIN         PD15
+#define Y_DIR_PIN          PE7
+#define Y_ENABLE_PIN       PA3
  #ifndef Y_CS_PIN
-  #define Y_CS_PIN                          PB8
+  #define Y_CS_PIN         PG15
 #endif
 
-#define Z_STEP_PIN                          PE13
-#define Z_DIR_PIN                           PC2
-#define Z_ENABLE_PIN                        PC0
+#define Z_STEP_PIN         PE13
+#define Z_DIR_PIN          PC2
+#define Z_ENABLE_PIN       PC0
 #ifndef Z_CS_PIN
-  #define Z_CS_PIN                          PB9
+  #define Z_CS_PIN         PB9
 #endif
 
-#define E0_STEP_PIN                         PE14
-#define E0_DIR_PIN                          PA0
-#define E0_ENABLE_PIN                       PC3
+#define E0_STEP_PIN        PE14
+#define E0_DIR_PIN         PA0
+#define E0_ENABLE_PIN      PC3
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PB3
+  #define E0_CS_PIN        PB3
 #endif
 
-#define E1_STEP_PIN                         PD15
-#define E1_DIR_PIN                          PE7
-#define E1_ENABLE_PIN                       PA3
+#define E1_STEP_PIN        PE11
+#define E1_DIR_PIN         PE8
+#define E1_ENABLE_PIN      PD7
 #ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PG15
+  #define E1_CS_PIN        PB8
 #endif
 
-#define E2_STEP_PIN                         PD13
-#define E2_DIR_PIN                          PG9
-#define E2_ENABLE_PIN                       PF0
+#define E2_STEP_PIN        PE9
+#define E2_DIR_PIN         PF1
+#define E2_ENABLE_PIN      PF2
 #ifndef E2_CS_PIN
-  #define E2_CS_PIN                         PG12
+  #define E2_CS_PIN        PA15
 #endif
 
 //
@@ -194,11 +196,11 @@
   //
   // Software serial
   //
-  #define X_SERIAL_TX_PIN                   PC13
-  #define X_SERIAL_RX_PIN                   PC13
+  #define X_SERIAL_TX_PIN                   PD6 // (originally E2)
+  #define X_SERIAL_RX_PIN                   PD6 // (originally E2)
 
-  #define Y_SERIAL_TX_PIN                   PE3
-  #define Y_SERIAL_RX_PIN                   PE3
+  #define Y_SERIAL_TX_PIN                   PD1 // (originally E1)
+  #define Y_SERIAL_RX_PIN                   PD1 // (originally E1)
 
   #define Z_SERIAL_TX_PIN                   PE1
   #define Z_SERIAL_RX_PIN                   PE1
@@ -206,11 +208,11 @@
   #define E0_SERIAL_TX_PIN                  PD4
   #define E0_SERIAL_RX_PIN                  PD4
 
-  #define E1_SERIAL_TX_PIN                  PD1
-  #define E1_SERIAL_RX_PIN                  PD1
+  #define E1_SERIAL_TX_PIN                  PE3
+  #define E1_SERIAL_RX_PIN                  PE3
 
-  #define E2_SERIAL_TX_PIN                  PD6
-  #define E2_SERIAL_RX_PIN                  PD6
+  #define E2_SERIAL_TX_PIN                  PC13
+  #define E2_SERIAL_RX_PIN                  PC13
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
